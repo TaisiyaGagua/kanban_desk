@@ -1,0 +1,81 @@
+.main_background {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	background-color: #0079BF;
+	height: 100%;
+}
+
+.main_and_footer {
+	height: 100%;
+}
+
+.taskDetail {
+	background-color: #0079BF;
+	height: 100%;
+}
+
+.taskDetail_container {
+	display: flex;
+    flex-direction: column;
+	gap: 20px;
+    align-items: flex-start;
+	margin: 15px;
+	border-radius: 10px;
+	background-color: white;
+	padding: 30px;
+	height: 73vh;
+}
+
+.taskDetail_title {
+	font-family: 'Roboto','Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+	font-size: 24px;
+}
+
+.taskDetail_description {
+	border: .5px solid #a0a6aa;
+	border-radius: 5px;
+	padding: 5px;
+	font-family: 'Roboto','Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+	font-size: 18px;
+}
+
+.card_button_add_description {
+	border-style: none;
+	border-radius: 5px;
+	background-color: #EBECF0;
+	background-color: #0079BF;
+	cursor: pointer;
+	padding: 6px;
+	width: fit-content;
+	color: white;
+	font-size: 18px;
+}
+
+.card_button_add_description:hover {
+	background-color: #0067A3;
+}
+.back_to_main_button {
+	align-self: end;
+	text-decoration: none;
+	color: black;
+	font-size: 28px;
+}
+
+@media (max-width: 420px) {
+	.main_background {
+	flex-direction: column;
+	align-items: center;
+	height: auto;
+	overflow: scroll;
+	}
+
+	.taskDetail_description {
+		font-size: 14px;
+	}
+	
+	.taskDetail_container {
+		margin: 10px;
+		padding: 10px;	
+	}
+}

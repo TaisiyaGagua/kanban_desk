@@ -1,0 +1,28 @@
+.footer {
+	display: flex;
+	position: sticky;
+    top: 0;
+    bottom: 0;
+	justify-content: space-between;
+	background-color: #0067A3;
+}
+
+p {
+	align-self: center;
+	margin-right: 20px;
+	margin-left: 20px;
+	color: white;
+	font-size: 18px;
+}
+
+.footer_tasks-number {
+	display: flex;
+	align-self: center;
+}
+
+@media (max-width: 420px) {
+	.footer {
+		display: none;
+
+	}
+}

@@ -1,26 +1,39 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Header from "./components/header/header";
+import Main from "./components/main/main";
+import "./App.css";
+import TaskService from "./services/task_service";
+import { TaskTrackerService } from "./services/tasktracker_service";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import TaskDetail from "./components/main/Blocks/cards/TaskDetail";
+import "./App.css";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App: React.FC = () => {
+    const taskService = new TaskService();
+    const taskTrackerService = new TaskTrackerService();
+
+    return (
+        <Router>
+            <Routes>
+                <Route
+                    path="/tasks/:category/:guid"
+                    element={<TaskDetail taskService={taskService} />}
+                />{" "}
+                <Route
+                    path="/"
+                    element={
+                        <div className="App">
+                            <Header></Header>
+                            <Main
+                                taskService={taskService}
+                                taskTrackerService={taskTrackerService}
+                            ></Main>
+                        </div>
+                    }
+                />{" "}
+            </Routes>
+        </Router>
+    );
+};
 
 export default App;
